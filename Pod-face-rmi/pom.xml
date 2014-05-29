@@ -20,6 +20,7 @@
             <scope>system</scope>
             <systemPath>${basedir}/libs/ag-facebook-api-sender.jar</systemPath>
         </dependency>
+        
     </dependencies>
     <name>Pod-face-rmi</name>
     <url>http://maven.apache.org</url>
