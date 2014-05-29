@@ -1,4 +1,7 @@
+package app;
 
+
+import br.edu.ifpb.pos.facebook.FacebookService;
 import java.rmi.AccessException;
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
@@ -17,10 +20,10 @@ import java.rmi.registry.Registry;
  */
 public class App {
     
-	public static void main(String[] args) throws AccessException, RemoteException, AlreadyBoundException {
+	public static void main(String[] args) throws AccessException, RemoteException, AlreadyBoundException, ClassNotFoundException {
 		Registry registry = LocateRegistry.createRegistry(10888);
-		registry.bind("FacadeServiceImp", new FacadeServiceImp());
+		registry.bind("FacadeService", new FacadeServiceImp());
 		System.out.println("serviço criado");
-		
+//                Class.forName("br.edu.ifpb.pos.facebook.FacebookService");
 	}
 }

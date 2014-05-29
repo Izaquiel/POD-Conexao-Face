@@ -1,3 +1,5 @@
+package app;
+
 
 import br.edu.ifpb.pod.Message;
 import br.edu.ifpb.pos.facebook.Configuration;
@@ -19,12 +21,15 @@ import java.nio.charset.Charset;
 public class ComunicacaoFace {
     public Message publicaMenssagem(Message msg) throws IOException{
         
-        String token = "CAAHLTnYdDYYBABZAKtiUBWZAmB0AxYjUZCmpWdlsiZCPQmLhizmsc0vy460ZCBbePBCa44C4UnIBIvgoYTlm7iPGg1ckizCNtnFGvRL55hVYRtJlsRONBlUDkKVQt21CQBxG2YQ0M2kV2o9T4p4KhWKcHEbRY00JCJZBgtQZBWkeesDPh0TLQUFrV667vQoZAnSszcxmgSBZCCQZDZD";
+        String token = "CAAHLTnYdDYYBAJO2Fyah0XVfEbVyUDFeGVdLs96evZAnVXhI60htBxyIL7YUInJEg41IngqSmu98fAx3cMPcO89pqZAgo6ynTijyrPvU7M84AJ6SQRCSXVp6He3UDgnqmbtJwxmEoEkt191ZBon3j4yXGNC3qZB4ja2ySWnvjR5UGE4BMZCVT1d9FrQ0ZB7w8ZD";
         Configuration config = new Configuration();
         config.setCharset(Charset.forName("UTF-8"));
+        System.out.println("Entrando em service");
+        System.out.println(FacebookService.class);
         FacebookService service = new FacebookServiceImpl(config);
         
         String response = service.createFeed(token, msg.getMessageContent());
+        System.out.println(response);
         msg.setfId(this.trataID(response));
         return msg;
         

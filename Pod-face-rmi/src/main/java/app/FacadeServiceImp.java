@@ -1,3 +1,5 @@
+package app;
+
 
 import br.edu.ifpb.pod.FacadeService;
 import br.edu.ifpb.pod.Message;
@@ -21,6 +23,8 @@ import java.util.logging.Logger;
  */
 
 public class FacadeServiceImp extends UnicastRemoteObject implements FacadeService{
+    
+    
     public FacadeServiceImp() throws RemoteException{
         super();
     }
@@ -40,9 +44,11 @@ public class FacadeServiceImp extends UnicastRemoteObject implements FacadeServi
     }
 
     public ArrayList<Message> publish(ArrayList<Message> messages) throws RemoteException {
+        
         ArrayList<Message> mensagens = new ArrayList<Message>();
         ComunicacaoFace cf = new ComunicacaoFace();
         
+        System.out.println("qts: " + messages.size());
         for(Message m: messages){
            
             try {
