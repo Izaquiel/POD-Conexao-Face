@@ -20,11 +20,15 @@
             <scope>system</scope>
             <systemPath>${basedir}/libs/ag-facebook-api-sender-v2.jar</systemPath>
         </dependency>
+<<<<<<< HEAD
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>SharedPOD</artifactId>
             <version>${project.version}</version>
         </dependency>
+=======
+        
+>>>>>>> origin/master
     </dependencies>
     <name>Pod-face-rmi</name>
     <url>http://maven.apache.org</url>
